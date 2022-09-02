@@ -1,0 +1,83 @@
+Evee 
+
+Height: 0.3m
+Weight: 6.5 Kg
+Type: Normal
+Weakenesses: Figthing
+Evolution? False
+Abilities: Run Away, Adaptability
+
+Vaporeon 
+
+Height: 1.0 m
+Weight: 29.0 Kg
+Type: Water
+Weakenesses: Grass, Eletric
+Evolution? True
+Abilities: Water Absorb 
+
+
+Jolteon 
+
+Height: 0.8 m
+Weight: 24.5 Kg
+Type: Eletric
+Weakenesses: Ground
+Evolution? True
+Abilities: Volt Absorb
+
+Flareon
+
+Height: 0.9 m
+Weight: 25.0 Kg
+Type: Fire
+Weakenesses: Water, Ground, Rock 
+Evolution? True
+Abilities: Flash Fire
+
+Espeon
+
+Height: 0.9 m
+Weight: 26.5 Kg
+Type: Psychic
+Weakenesses: Ghost, Dark, Bug
+Evolution? True
+Abilities: Synchronize 
+
+Umbreon 
+
+Height: 1.0 m
+Weight: 27.0 Kg
+Type: Dark
+Weakenesses: Fairy, Bug, Fighthing
+Evolution? True
+Abilities: Synchronize
+
+Leafeon
+
+Height: 1.0 m
+Weight: 25.5 Kg
+Type: Grass
+Weakenesses: Fire, Flying, Ice, Poison, Bug
+Evolution? True
+Abilities: Leaf Guard
+
+Glaceon
+
+Height: 0.8 m
+Weight: 25.9 Kg
+Type: Ice
+Weakenesses: Fire, Stell, Fighthing, Rock
+Evolution? True
+Abilities: Snow Claok
+
+Sylveon 
+
+Height: 1.0 m
+Weight: 23.5 Kg
+Type: Fairy
+Weakenesses: Stell, Poison
+Evolution? True
+Abilities: Cute Charm
+
+
