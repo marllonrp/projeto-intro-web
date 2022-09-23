@@ -79,90 +79,76 @@ const object9 = {
   weakenesses: ["Stell", "Poison"],
 };
 
-const allobjects = [];
+const allObjects = [];
 
-// allobjects.push(
-//   object1,
-//   object2,
-//   object3,
-//   object4,
-//   object5,
-//   object6,
-//   object7,
-//   object8,
-//   object9
-// );
+allObjects.push(
+  object1,
+  object2,
+  object3,
+  object4,
+  object5,
+  object6,
+  object7,
+  object8,
+  object9
+);
 
-if (object1.evolution == true) {
-  allobjects.push(object1);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
+// 1. Reescrevendo o relatório criado utilizando console.log() que começamos na semana 2, altere a forma que a característica de array dos itens seja escrita como um laço que guarde todos os valores da propriedade array do objeto em uma mesma string. Utilize esta string no relatório.
+
+const modificarArrayString = (array) => {
+  let newArray = [...array];
+  for (objeto in newArray){
+    newArray[objeto] = {...newArray[objeto]}
+  }
+
+  for (i = 0; i < newArray.length; i++) {
+    let string = newArray[i].weakenesses.join();
+    newArray[i].weakenesses = string;
+  }
+  return newArray;
+};
+
+console.log(modificarArrayString(allObjects))
+
+
+// 2. Ainda no relatório, altere-o para que ele seja criado utilizando um laço. Ou seja, você não deve mais imprimir individualmente cada item do relatório. Cada item deve ser exibido a partir de uma iteração do laço. Para testar, adicione mais um item ao array de objetos, e verifique se ele é exibido corretamente.
+
+for (i in allObjects){
+  console.log( allObjects[i])
 }
 
-if (object2.evolution == true) {
-  allobjects.push(object2);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
+// 3. Crie uma função que receba como parâmetro um objeto, e devolva a string do relatório com os dados do objeto.
 
-if (object3.evolution == true) {
-  allobjects.push(object3);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
+const dadosObjeto = (objeto) => {
+  let string = "";
+  for (i in objeto) {
+    string += `${i}: ${objeto[i]} `;
+  }
+  return console.log(string);
+};
 
-if (object4.evolution == true) {
-  allobjects.push(object4);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
 
-if (object5.evolution == true) {
-  allobjects.push(object5);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
 
-if (object6.evolution == true) {
-  allobjects.push(object6);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
+dadosObjeto(object1)
 
-if (object7.evolution == true) {
-  allobjects.push(object7);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
+// 4. Crie uma função que recebe um array de objetos e uma string. Esta função deve retornar um objeto, e o objeto retornado deve possuir apenas os itens que tenham o nome/título igual à string passada como parâmetro. Caso não exista um item, exiba um ALERT indicando que nenhum item foi encontrado.
+const stringBusca = prompt ("Busque um nome pokemon: ").toLowerCase()
 
-if (object8.evolution == true) {
-  allobjects.push(object8);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
+const filtro = (array, stringg) => {
+  let newArray = []
 
-if (object9.evolution == true) {
-  allobjects.push(object9);
-} else {
-  alert(
-    `Não foi possivel adicionar o objeto à array, pois a chave "evolution" possui valor falso.`
-  );
-}
+   array.filter((titulo) => {
+    if (titulo.nome.toLowerCase() === stringg) {
+      newArray.push(titulo)
+    }
+  }
+  )
+  if (newArray.length === 0){
+    alert ("Não foi encontrado nenhum pokemon.")
+  }
+    return newArray   
+    }
 
-console.log(allobjects);
+
+    console.log(filtro(allObjects, stringBusca));
+
