@@ -1,10 +1,13 @@
 const object1 = {
-  nome: "Evee",
+  nome: "Eevee",
   height: 0.3,
   weight: 6.5,
   type: "Normal",
   evolution: false,
   weakenesses: ["Figthing"],
+  image1: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png",
+  image2:
+    "https://assets.pokemon.com/assets/cms2/img/cards/web/SWSH9/SWSH9_EN_TG11.png",
 };
 
 const object2 = {
@@ -14,6 +17,10 @@ const object2 = {
   type: "Water",
   evolution: true,
   weakenesses: ["Grass", "Eletric"],
+  image1: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png",
+  image2:
+    "https://assets.pokemon.com/assets/cms2/img/cards/web/SWSHP/SWSHP_EN_SWSH181.png",
+  link: "https://www.pokemon.com/us/pokedex/vaporeon",
 };
 
 const object3 = {
@@ -23,6 +30,9 @@ const object3 = {
   type: "Eletric",
   evolution: true,
   weakenesses: ["Ground"],
+  image1: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/135.png",
+  image2: "https://assets.pokemon.com/assets/cms2/img/cards/web/SWSHP/SWSHP_EN_SWSH151.png",
+  link: "https://www.pokemon.com/us/pokedex/jolteon",
 };
 
 const object4 = {
@@ -32,6 +42,10 @@ const object4 = {
   type: "Fire",
   evolution: true,
   weakenesses: ["Water", "Ground", "Rock"],
+  image1: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/136.png",
+  image2:
+    "https://assets.pokemon.com/assets/cms2/img/cards/web/SWSH7/SWSH7_EN_18.png",
+  link: "https://www.pokemon.com/us/pokedex/flareon",
 };
 
 const object5 = {
@@ -97,8 +111,8 @@ allObjects.push(
 
 const modificarArrayString = (array) => {
   let newArray = [...array];
-  for (objeto in newArray){
-    newArray[objeto] = {...newArray[objeto]}
+  for (objeto in newArray) {
+    newArray[objeto] = { ...newArray[objeto] };
   }
 
   for (i = 0; i < newArray.length; i++) {
@@ -108,14 +122,13 @@ const modificarArrayString = (array) => {
   return newArray;
 };
 
-console.log(modificarArrayString(allObjects))
-
+// console.log(modificarArrayString(allObjects))
 
 // 2. Ainda no relatório, altere-o para que ele seja criado utilizando um laço. Ou seja, você não deve mais imprimir individualmente cada item do relatório. Cada item deve ser exibido a partir de uma iteração do laço. Para testar, adicione mais um item ao array de objetos, e verifique se ele é exibido corretamente.
 
-for (i in allObjects){
-  console.log( allObjects[i])
-}
+// for (i in allObjects){
+//   console.log( allObjects[i])
+// }
 
 // 3. Crie uma função que receba como parâmetro um objeto, e devolva a string do relatório com os dados do objeto.
 
@@ -127,28 +140,55 @@ const dadosObjeto = (objeto) => {
   return console.log(string);
 };
 
-
-
-dadosObjeto(object1)
+// dadosObjeto(object1)
 
 // 4. Crie uma função que recebe um array de objetos e uma string. Esta função deve retornar um objeto, e o objeto retornado deve possuir apenas os itens que tenham o nome/título igual à string passada como parâmetro. Caso não exista um item, exiba um ALERT indicando que nenhum item foi encontrado.
-const stringBusca = prompt ("Busque um nome pokemon: ").toLowerCase()
+// const stringBusca = prompt ("Busque um nome pokemon: ").toLowerCase()
 
 const filtro = (array, stringg) => {
-  let newArray = []
+  let newArray = [];
 
-   array.filter((titulo) => {
+  array.filter((titulo) => {
     if (titulo.nome.toLowerCase() === stringg) {
-      newArray.push(titulo)
+      newArray.push(titulo);
     }
+  });
+  if (newArray.length === 0) {
+    alert("Não foi encontrado nenhum pokemon.");
   }
-  )
-  if (newArray.length === 0){
-    alert ("Não foi encontrado nenhum pokemon.")
+  return newArray;
+};
+
+// console.log(filtro(allObjects, stringBusca));
+
+// Slides
+
+let count = 1;
+
+document.getElementById("radio1").checked = true;
+
+setInterval(function () {
+  nextImage();
+}, 3000);
+
+function nextImage() {
+  count++;
+  if (count > 10) {
+    count = 1;
   }
-    return newArray   
+  document.getElementById("radio" + count).checked = true;
+}
+
+// Filp-Cards
+
+document.querySelectorAll(".cards").forEach(
+ cards=> {cards.addEventListener("click", (e) => {
+    if (cards.classList.contains("card--flip")) {
+      cards.classList.remove("card--flip");
+    } else {
+      cards.classList.add("card--flip");
     }
+  });
+});
 
-
-    console.log(filtro(allObjects, stringBusca));
 
