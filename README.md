@@ -30,5 +30,4 @@ Esse é o projeto de introdução aos fundamentos do desenvolvimento Web do curs
 
 - Filp-card
 
-
-[def]: ./readme/projeto-eevee-s-evolutions.mp4
+[Clique aqui para acessar!](https://marllonrp.github.io/projeto-intro-web/)
