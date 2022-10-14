@@ -106,13 +106,13 @@
       <div class = "search-bar">
         <label for="name"></label>
         <input type="text" id="name" name="name" />
-        <button type="button" id="button-search">Buscar</button>
+        <button type="button" id="button-search" onclick="buscar(event)">Buscar</button>
       </div>
 
 
-      <div class = "list-container">
+      <div class = "list-container" id="list-container">
         <section class="items">
-          <div class="cards" id="card">
+          <div class="cards">
             <div class="card__inner card__inner--front">
               <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png">
             </div>
@@ -152,7 +152,7 @@
             </a>
           </h3>
           <ul>
-            <li><strong>Height: </strong>1.0 m</li>
+            <li><strong>Height: </strong>1 m</li>
             <li><strong> Weight: </strong> 29.0 Kg</li>
             <li><strong>Type: </strong>Water</li>
             <li><strong>Weakenesses: </strong>Grass, Eletric</li>
@@ -192,7 +192,7 @@
               <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/136.png">
             </div>
             <div class="card__inner card__inner--back">
-              <img src="https://assets.pokemon.com/assets/cms2/img/cards/web/SWSH7/SWSH7_EN_18.png">
+              <img src="https://assets.pokemon.com/assets/cms2/img/cards/web/SWSHP/SWSHP_EN_SWSH149.png">
             </div>
           </div>
           <div class="items-text">
@@ -245,7 +245,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer id ="footer">
       <div class="footer-container">
       <div class="image-footer"></div>
       <div class="text-container">
